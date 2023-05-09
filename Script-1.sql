@@ -1,7 +1,7 @@
 create table if not exists types_of_music
 (
 type_id SERIAL primary key,
-name VARCHAR(40) not NULL
+name VARCHAR(40) not null UNIQUE
  );
  
 create table if not exists music_artist
@@ -13,7 +13,7 @@ name varchar(40) not null
 create table if not exists types_artist
 (
 type_id integer references types_of_music(type_id),
-artist_id integer references music_artist(artist_id),
+artist_id integer references music_artist(artist_id) UNIQUE,
 constraint ta primary key (type_id, artist_id)
 );
 
@@ -21,7 +21,7 @@ create table if not exists album
 (
 album_id serial primary key,
 name varchar(40) not null,
-year integer not null
+year integer not null CHECK (year > 1900)
 );
 
 create table if not exists artist_album
@@ -36,7 +36,7 @@ create table if not exists song
 song_id serial primary key,
 album_id integer not null references album(album_id),
 name varchar(40) not null,
-duration varchar(40) not null
+duration integer not null
 );
 
 create table if not exists collection
@@ -50,5 +50,3 @@ create table if not exists collection_song
 song_id integer references song(song_id),
 constraint sc primary key(collection_id, song_id)
 );
-
-
