@@ -50,3 +50,15 @@ create table if not exists collection_song
 song_id integer references song(song_id),
 constraint sc primary key(collection_id, song_id)
 );
+
+ALTER TABLE types_of_music 
+RENAME COLUMN name TO typename;
+
+ALTER TABLE album  
+RENAME COLUMN name TO album_name;
+
+ALTER TABLE song  
+RENAME COLUMN name TO song_name;
+
+ALTER TABLE collection 
+RENAME COLUMN name TO collection_name;
