@@ -10,10 +10,11 @@ artist_id serial primary key,
 name varchar(40) not null
 ); 
 
+
 create table if not exists types_artist
 (
 type_id integer references types_of_music(type_id),
-artist_id integer references music_artist(artist_id) UNIQUE,
+artist_id integer references music_artist(artist_id),
 constraint ta primary key (type_id, artist_id)
 );
 

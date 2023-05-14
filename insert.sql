@@ -128,51 +128,51 @@ values ('2021 collection', '09.05.2021');
 
 insert into collection_song 
 (collection_id, song_id)
-values (1, 1)
+values (1, 1);
 
 insert into collection_song 
 (collection_id, song_id)
-values (1, 2)
+values (1, 2);
 
 insert into collection_song 
 (collection_id, song_id)
-values (1, 3)
+values (1, 3);
 
 insert into collection_song 
 (collection_id, song_id)
-values (2, 2)
+values (2, 2);
 
 insert into collection_song 
 (collection_id, song_id)
-values (2, 3)
+values (2, 3);
 
 insert into collection_song 
 (collection_id, song_id)
-values (2, 4)
+values (2, 4);
 
 insert into collection_song 
 (collection_id, song_id)
-values (3, 3)
+values (3, 3);
 
 insert into collection_song 
 (collection_id, song_id)
-values (3, 4)
+values (3, 4);
 
 insert into collection_song 
 (collection_id, song_id)
-values (3, 5)
+values (3, 5);
 
 insert into collection_song 
 (collection_id, song_id)
-values (4, 4)
+values (4, 4);
 
 insert into collection_song 
 (collection_id, song_id)
-values (4, 5)
+values (4, 5);
 
 insert into collection_song 
 (collection_id, song_id)
-values (4, 6)
+values (4, 6);
 
 insert into song 
 (album_id, song_name, duration)
@@ -182,7 +182,13 @@ insert into song
 (album_id, song_name, duration)
 values (2, 'fake myself song', 256);
 
+insert into types_artist 
+(type_id, artist_id)
+values (2 , 1);
 
+insert into artist_album 
+(artist_id, album_id)
+values (3, 4);
 
 
 
