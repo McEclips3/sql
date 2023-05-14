@@ -100,13 +100,6 @@ LIMIT 1 /* Получаем первую запись */
 );
 
 
-select distinct  album_name  /* Получаем ТОЛЬКО уникальные имена альбомов. Другие данные в выводе не нужны */
-FROM album a  /* Из таблицы альбомов */
-JOIN artist_album aa ON a.album_id  = aa.album_id  /* Объединяем альбомы с промежуточной таблицей между альбомами и исполнителями */
-JOIN music_artist ma ON ma.artist_id = aa.artist_id /* ВОТ ТУТ */
-JOIN types_artist ta ON ta.artist_id  = ma.artist_id  /* ТУТ ОБРАЩАЮСЬ К ma Объединяем промежуточную таблицу выше с промежуточной таблицей между исполнителями и жанрами */
-GROUP BY a.album_id,  ma.artist_id  /* ТУТ ОБРАЩАЮСЬ К ma Группируем по айди альбомов и айди исполнителей из промежуточной таблицы между исполнителями и жанрами */
-HAVING COUNT(ta.type_id) > 1;
 
 
 
